@@ -29,15 +29,34 @@ class ChitChatAgent:
         """Handle casual conversation and return response."""
         try:
             query = state.query
+            conversation_context = state.context.get("conversation_context", "")
+            
+            # Build context-aware prompt
+            if conversation_context and conversation_context != "No previous conversation context.":
+                prompt = f"""
+                {self.system_prompt}
+                
+                Previous conversation context:
+                {conversation_context}
+                
+                Current user message: {query}
+                
+                Respond naturally, considering the conversation history. If the user mentioned their name before, remember it.
+                """
+            else:
+                prompt = f"""
+                {self.system_prompt}
+                
+                Current user message: {query}
+                """
             
             # Generate conversational response
             response = self.client.chat.completions.create(
                 model="gpt-4o-mini",
                 messages=[
-                    {"role": "system", "content": self.system_prompt},
-                    {"role": "user", "content": query}
+                    {"role": "system", "content": prompt}
                 ],
-                max_tokens=150,
+                max_tokens=200,
                 temperature=0.8
             )
             

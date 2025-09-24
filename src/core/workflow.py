@@ -275,12 +275,18 @@ class ChatbotWorkflow:
     async def process_query(self, user_id: str, role: str, query: str, context: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
         """Process a user query through the workflow."""
         try:
-            # Create initial state
+            # Get conversation context for better responses
+            conversation_context = history_manager.get_conversation_context(user_id, limit=5)
+            
+            # Create initial state with conversation context
             initial_state = ChatState(
                 user_id=user_id,
                 role=role,
                 query=query,
-                context=context or {}
+                context={
+                    **(context or {}),
+                    "conversation_context": conversation_context
+                }
             )
             
             # Run the workflow
@@ -294,11 +300,20 @@ class ChatbotWorkflow:
             if final_state.get("chart_spec"):
                 response_data["chart"] = final_state["chart_spec"]
             
-            # Get conversation history from history manager
+            # Store the conversation in history
+            message = final_state.get("response_message") or "I'm sorry, I couldn't process your request."
+            history_manager.add_turn(
+                user_id=user_id,
+                user_query=query,
+                assistant_response=message,
+                data=response_data if response_data else None
+            )
+            
+            # Get updated conversation history
             history = history_manager.get_history(user_id)
             
             return {
-                "message": final_state.get("response_message") or "I'm sorry, I couldn't process your request.",
+                "message": message,
                 "data": response_data if response_data else None,
                 "history": history
             }
