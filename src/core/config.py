@@ -6,7 +6,7 @@ Handles environment variables and application settings.
 import os
 from typing import Optional
 from dotenv import load_dotenv
-from models import DatabaseConfig
+from .models import DatabaseConfig
 
 # Load environment variables
 load_dotenv()

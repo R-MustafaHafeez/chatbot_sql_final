@@ -5,11 +5,11 @@ Advanced SQL generation with RBAC enforcement.
 
 from typing import Dict, Any, Optional, List
 from openai import OpenAI
-from models import ChatState, Command, DatabaseResult
-from utils.rbac import rbac_manager
-from database import DatabaseManager
-from agents.sql_validator import SQLValidator
-from agents.schema_introspector import SchemaIntrospector
+from ..core.models import ChatState, Command, DatabaseResult
+from ..utils.rbac import rbac_manager
+from ..core.database import DatabaseManager
+from .sql_validator import SQLValidator
+from .schema_introspector import SchemaIntrospector
 import logging
 import json
 

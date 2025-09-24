@@ -5,7 +5,7 @@ Auto Schema Discovery - Automatically discovers database schema and generates dy
 
 import logging
 from typing import Dict, Any, List, Optional
-from database import DatabaseManager
+from ..core.database import DatabaseManager
 
 logger = logging.getLogger(__name__)
 

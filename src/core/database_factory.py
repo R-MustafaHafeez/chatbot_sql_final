@@ -6,7 +6,7 @@ Database Factory Pattern for multiple database support.
 import os
 from enum import Enum
 from typing import Optional
-from config import DatabaseConfig
+from .config import DatabaseConfig
 
 class DatabaseType(Enum):
     SQLITE = "sqlite"

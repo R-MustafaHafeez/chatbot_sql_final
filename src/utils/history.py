@@ -5,7 +5,7 @@ Stores and retrieves conversation history by user_id.
 
 from typing import Dict, List, Any, Optional
 from datetime import datetime
-from models import ConversationTurn
+from ..core.models import ConversationTurn
 import json
 import logging
 

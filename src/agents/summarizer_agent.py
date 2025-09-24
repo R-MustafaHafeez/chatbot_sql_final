@@ -6,8 +6,8 @@ Always runs before output (except chit-chat).
 
 from typing import Dict, Any, Optional, List
 from openai import OpenAI
-from models import ChatState, Command
-from utils.history import history_manager
+from ..core.models import ChatState, Command
+from ..utils.history import history_manager
 import logging
 import json
 

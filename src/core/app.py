@@ -55,7 +55,7 @@ async def startup_event():
         openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
         
         # Initialize database manager using factory pattern
-        from config import AppConfig
+        from .config import AppConfig
         config = AppConfig()
         db_manager = DatabaseManager(config.database_config)
         

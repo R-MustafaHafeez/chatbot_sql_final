@@ -5,7 +5,7 @@ Database Schema Introspector based on LangGraph tutorial.
 
 import logging
 from typing import Dict, Any, List, Optional
-from database import DatabaseManager
+from ..core.database import DatabaseManager
 
 logger = logging.getLogger(__name__)
 

@@ -4,7 +4,7 @@ Provides polite denial messages when users lack permissions.
 """
 
 from typing import Dict, Any, Optional
-from models import ChatState, Command
+from ..core.models import ChatState, Command
 import logging
 
 logger = logging.getLogger(__name__)

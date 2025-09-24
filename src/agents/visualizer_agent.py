@@ -5,7 +5,7 @@ Generates visualization specs that frontend can render.
 
 from typing import Dict, Any, Optional, List
 from openai import OpenAI
-from models import ChatState, Command, ChartSpec
+from ..core.models import ChatState, Command, ChartSpec
 import logging
 import json
 

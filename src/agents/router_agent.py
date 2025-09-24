@@ -5,7 +5,7 @@ Analyzes user queries and routes to appropriate agents.
 
 from typing import Dict, Any, Optional
 from openai import OpenAI
-from models import ChatState, Command
+from ..core.models import ChatState, Command
 import logging
 
 logger = logging.getLogger(__name__)

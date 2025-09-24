@@ -9,8 +9,8 @@ from typing import Dict, Any, Optional, List
 from sqlalchemy import create_engine, text, MetaData, Table, Column, String, Integer
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.exc import SQLAlchemyError
-from models import DatabaseResult, DatabaseConfig, RBACConfig
-from database_factory import DatabaseConnectionFactory, DatabaseType
+from .models import DatabaseResult, DatabaseConfig, RBACConfig
+from .database_factory import DatabaseConnectionFactory, DatabaseType
 import pandas as pd
 
 logger = logging.getLogger(__name__)

@@ -5,7 +5,7 @@ Provides friendly, conversational responses without database access.
 
 from typing import Dict, Any, Optional
 from openai import OpenAI
-from models import ChatState, Command
+from ..core.models import ChatState, Command
 import logging
 
 logger = logging.getLogger(__name__)
