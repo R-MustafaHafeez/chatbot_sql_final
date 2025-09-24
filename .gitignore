@@ -69,3 +69,7 @@ test_*.py
 # Temporary files
 *.tmp
 *.temp
+
+# Chatbot specific
+chatbot_db
+GIT_SETUP_INSTRUCTIONS.md
