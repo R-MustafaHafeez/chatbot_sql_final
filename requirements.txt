@@ -1,0 +1,14 @@
+fastapi
+uvicorn[standard]
+openai
+pydantic
+python-dotenv
+sqlalchemy
+pandas
+numpy
+python-multipart
+httpx
+langgraph
+langchain
+langchain-openai
+pymysql
