@@ -268,3 +268,4 @@ The application logs are configured via the `LOG_LEVEL` environment variable. Se
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+# chatbot_sql_final
