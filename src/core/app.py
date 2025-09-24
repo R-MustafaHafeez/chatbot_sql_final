@@ -11,11 +11,11 @@ from fastapi.middleware.cors import CORSMiddleware
 from openai import OpenAI
 from dotenv import load_dotenv
 
-from models import ChatRequest, ChatResponse, DatabaseConfig
-from workflow import ChatbotWorkflow
-from database import create_database_manager, DatabaseManager
-from utils.history import history_manager
-from utils.rbac import rbac_manager
+from .models import ChatRequest, ChatResponse, DatabaseConfig
+from .workflow import ChatbotWorkflow
+from .database import create_database_manager, DatabaseManager
+from ..utils.history import history_manager
+from ..utils.rbac import rbac_manager
 
 # Load environment variables
 load_dotenv()

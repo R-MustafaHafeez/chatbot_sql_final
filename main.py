@@ -5,7 +5,7 @@ Starts the FastAPI server with the LangGraph workflow.
 
 import uvicorn
 import logging
-from config import config
+from src.core.config import config
 
 # Configure logging
 logging.basicConfig(
@@ -25,7 +25,7 @@ def main():
         
         # Start the server
         uvicorn.run(
-            "app:app",
+            "src.core.app:app",
             host=config.app_host,
             port=config.app_port,
             reload=True,  # Enable auto-reload for development

@@ -73,3 +73,7 @@ test_*.py
 # Chatbot specific
 chatbot_db
 GIT_SETUP_INSTRUCTIONS.md
+
+# Clean structure
+src/__pycache__/
+src/*/__pycache__/
